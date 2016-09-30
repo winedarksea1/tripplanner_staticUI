@@ -1,0 +1,9 @@
+body {
+  background-color: red; }
+
+#map-canvas {
+  height: 100%; }
+
+#mapholder {
+  height: 500px;
+  width: 500px; }
