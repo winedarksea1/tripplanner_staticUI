@@ -1,25 +1,51 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <h3>Trip Planner</h3>
 
-  <select>
-  {% for hotel in templateHotels %}
-    <option value='{{hotel.name}}'>{{hotel.name}}</option>
-  {% endfor %}
-  </select>
+    <div class="row">
+    <div class="col-md-12">
+    <form class="form-horizontal" id="selections">
 
-  <select>
-  {% for restaurant in templateRestaurants %}
-    <option value='{{restaurant.name}}'>{{restaurant.name}}</option>
-  {% endfor %}
-  </select>
+      <div class="form-group">
+        <label for="day">Which Day?</label>
+        <select class="form-control" id="day">
+          <option value='1'>Tuesday, October 3rd</option>
+          <option value='2'>Wednesday, October 4th</option>
+          <option value='3'>Thursdat, October 5th</option>
+          <option value='4'>4</option>
+        </select>
+      </div>
 
-  <select>
-  {% for activity in templateActivities %}
-    <option value='{{activity.name}}'>{{activity.name}}</option>
-  {% endfor %}
-  </select>
+
+      <div class="form-group">
+        <label for="hotel">Hotels:</label>
+        <select class="form-control" id="hotel">
+          {% for hotel in templateHotels %}
+            <option value='{{hotel.name}}'>{{hotel.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="restaurant">Restaurants:</label>
+          <select class="form-control" id="restaurant">
+            {% for restaurant in templateRestaurants %}
+              <option value='{{restaurant.name}}'>{{restaurant.name}}</option>
+            {% endfor %}
+            </select>
+      </div>
+
+      <div class="form-group">
+        <label for="activity">Activity:</label>
+          <select class="form-control" id="activity">
+            {% for activity in templateActivities %}
+              <option value='{{activity.name}}'>{{activity.name}}</option>
+            {% endfor %}
+          </select>
+      </div>
+    </form>
+    </div>
+  </div>
 
 {% endblock %}
 
